@@ -140,7 +140,7 @@ optional arguments:
 ## Example Workflow
 
 <div align="center">
-  <img src="images/shoscout_workflow.svg" alt="Shoscout Workflow" width="800"/>
+  <img src="images/shoscout_workflow.png" alt="Shoscout Workflow" width="800"/>
 </div>
 
 1. Scan a single domain with all features:

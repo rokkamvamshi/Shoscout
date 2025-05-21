@@ -1,0 +1,111 @@
+<svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="960" height="500" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Report Header -->
+  <rect x="100" y="50" width="760" height="80" rx="5" ry="5" fill="#3498db"/>
+  
+  <!-- Report Title -->
+  <text x="130" y="90" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Shoscout Scan Report: example.com</text>
+  <text x="130" y="115" font-family="Arial, sans-serif" font-size="14" fill="white">Scan completed on May 21, 2025 • 41 subdomains • 13 hosts with open ports • 7 vulnerabilities</text>
+  
+  <!-- Logo in header -->
+  <g transform="translate(780, 65) scale(0.15)">
+    <!-- Background shield (simplified) -->
+    <path d="M400 100 L600 175 L600 350 Q600 450 400 500 Q200 450 200 350 L200 175 Z" fill="#2980b9"/>
+    <!-- Inner shield (simplified) -->
+    <path d="M400 130 L560 195 L560 340 Q560 430 400 475 Q240 430 240 340 L240 195 Z" fill="#3498db"/>
+    <!-- Simplified elements -->
+    <circle cx="400" cy="310" r="80" fill="none" stroke="#ecf0f1" stroke-width="5" opacity="0.5"/>
+    <path d="M400 310 L400 230 A80 80 0 0 1 480 310 Z" fill="#ecf0f1" opacity="0.3"/>
+  </g>
+  
+  <!-- Stats Boxes -->
+  <g transform="translate(100, 150)">
+    <!-- Box 1: Subdomains -->
+    <rect width="180" height="100" rx="5" ry="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Subdomains</text>
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#3498db">41</text>
+    <rect x="20" y="80" width="140" height="5" rx="2" ry="2" fill="#ecf0f1"/>
+  </g>
+  
+  <g transform="translate(300, 150)">
+    <!-- Box 2: Open Ports -->
+    <rect width="180" height="100" rx="5" ry="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Open Ports</text>
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#2ecc71">87</text>
+    <rect x="20" y="80" width="140" height="5" rx="2" ry="2" fill="#ecf0f1"/>
+  </g>
+  
+  <g transform="translate(500, 150)">
+    <!-- Box 3: Services -->
+    <rect width="180" height="100" rx="5" ry="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Services</text>
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#9b59b6">23</text>
+    <rect x="20" y="80" width="140" height="5" rx="2" ry="2" fill="#ecf0f1"/>
+  </g>
+  
+  <g transform="translate(700, 150)">
+    <!-- Box 4: Vulnerabilities -->
+    <rect width="180" height="100" rx="5" ry="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Vulnerabilities</text>
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#e74c3c">7</text>
+    <rect x="20" y="80" width="140" height="5" rx="2" ry="2" fill="#ecf0f1"/>
+  </g>
+  
+  <!-- Vulnerability Table -->
+  <g transform="translate(100, 270)">
+    <rect width="760" height="200" rx="5" ry="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Table header -->
+    <rect width="760" height="40" rx="5" ry="5" fill="#f5f5f5"/>
+    <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Key Findings</text>
+    
+    <!-- Table column headings -->
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f8c8d">Host</text>
+    <text x="250" y="65" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f8c8d">Port</text>
+    <text x="310" y="65" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f8c8d">Type</text>
+    <text x="400" y="65" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f8c8d">Vulnerability</text>
+    <text x="680" y="65" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f8c8d">Severity</text>
+    
+    <!-- Table horizontal line -->
+    <line x1="20" y1="75" x2="740" y2="75" stroke="#e0e0e0" stroke-width="1"/>
+    
+    <!-- Table rows -->
+    <!-- Row 1 -->
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">api.example.com</text>
+    <text x="250" y="100" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">443</text>
+    <text x="310" y="100" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Web</text>
+    <text x="400" y="100" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">CORS Misconfiguration</text>
+    <rect x="680" y="90" width="60" height="20" rx="10" ry="10" fill="#e74c3c" fill-opacity="0.2"/>
+    <text x="710" y="103" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c" text-anchor="middle">High</text>
+    
+    <!-- Row 2 -->
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">dev.example.com</text>
+    <text x="250" y="130" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">80</text>
+    <text x="310" y="130" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Web</text>
+    <text x="400" y="130" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Exposed .git Directory</text>
+    <rect x="680" y="120" width="60" height="20" rx="10" ry="10" fill="#e74c3c" fill-opacity="0.2"/>
+    <text x="710" y="133" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c" text-anchor="middle">High</text>
+    
+    <!-- Row 3 -->
+    <text x="20" y="160" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">mail.example.com</text>
+    <text x="250" y="160" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">443</text>
+    <text x="310" y="160" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">SSL</text>
+    <text x="400" y="160" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Weak SSL Ciphers</text>
+    <rect x="680" y="150" width="60" height="20" rx="10" ry="10" fill="#f39c12" fill-opacity="0.2"/>
+    <text x="710" y="163" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f39c12" text-anchor="middle">Medium</text>
+    
+    <!-- Row 4 -->
+    <text x="20" y="190" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">admin.example.com</text>
+    <text x="250" y="190" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">8080</text>
+    <text x="310" y="190" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Web</text>
+    <text x="400" y="190" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Open Redirect</text>
+    <rect x="680" y="180" width="60" height="20" rx="10" ry="10" fill="#e74c3c" fill-opacity="0.2"/>
+    <text x="710" y="193" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c" text-anchor="middle">High</text>
+  </g>
+  
+  <!-- Footer -->
+  <rect x="100" y="485" width="760" height="1" fill="#e0e0e0"/>
+  <text x="480" y="490" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#95a5a6">Full details available in JSON, CSV, and HTML formats</text>
+</svg>

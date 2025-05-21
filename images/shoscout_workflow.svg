@@ -1,0 +1,101 @@
+<svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="960" height="500" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="480" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">Shoscout Workflow</text>
+  
+  <!-- Workflow Boxes -->
+  <!-- Input -->
+  <rect x="100" y="100" width="160" height="80" rx="10" ry="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="180" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Input</text>
+  <text x="180" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">Domain(s)</text>
+  
+  <!-- Subdomain Enumeration -->
+  <rect x="400" y="100" width="160" height="80" rx="10" ry="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="480" y="140" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Subdomain</text>
+  <text x="480" y="165" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Enumeration</text>
+  
+  <!-- Port Scanning -->
+  <rect x="700" y="100" width="160" height="80" rx="10" ry="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="780" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Port Scanning</text>
+  
+  <!-- Service Analysis -->
+  <rect x="700" y="230" width="160" height="80" rx="10" ry="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="780" y="275" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Service Analysis</text>
+  
+  <!-- Vulnerability Check -->
+  <rect x="400" y="230" width="160" height="80" rx="10" ry="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="480" y="270" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Vulnerability</text>
+  <text x="480" y="295" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Check</text>
+  
+  <!-- Reporting -->
+  <rect x="100" y="230" width="160" height="80" rx="10" ry="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="180" y="275" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Reporting</text>
+  
+  <!-- Shodan API -->
+  <rect x="400" y="360" width="160" height="60" rx="10" ry="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="480" y="395" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Shodan API</text>
+  
+  <!-- Arrows -->
+  <!-- Input to Subdomain -->
+  <path d="M260 140 L400 140" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Subdomain to Port Scan -->
+  <path d="M560 140 L700 140" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Port Scan to Service -->
+  <path d="M780 180 L780 230" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Service to Vulnerabilities -->
+  <path d="M700 270 L560 270" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Vulnerabilities to Report -->
+  <path d="M400 270 L260 270" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Shodan to Enumeration -->
+  <path d="M480 360 L480 310" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Define arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+    refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- Results Icons -->
+  <g transform="translate(140, 380)">
+    <rect width="80" height="80" rx="5" ry="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="40" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">JSON</text>
+    <rect x="15" y="40" width="50" height="25" rx="2" ry="2" fill="#bdc3c7" stroke="none"/>
+    <rect x="20" y="45" width="40" height="3" rx="1" ry="1" fill="#ecf0f1" stroke="none"/>
+    <rect x="20" y="52" width="30" height="3" rx="1" ry="1" fill="#ecf0f1" stroke="none"/>
+    <rect x="20" y="59" width="25" height="3" rx="1" ry="1" fill="#ecf0f1" stroke="none"/>
+  </g>
+  
+  <g transform="translate(240, 380)">
+    <rect width="80" height="80" rx="5" ry="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="40" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">HTML</text>
+    <polygon points="15,40 65,40 65,70 15,70" fill="#bdc3c7" stroke="none"/>
+    <polyline points="20,45 60,45" stroke="#ecf0f1" stroke-width="2" fill="none"/>
+    <polyline points="20,52 50,52" stroke="#ecf0f1" stroke-width="2" fill="none"/>
+    <polyline points="20,59 55,59" stroke="#ecf0f1" stroke-width="2" fill="none"/>
+    <polyline points="20,66 45,66" stroke="#ecf0f1" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Features -->
+  <g transform="translate(640, 380)">
+    <rect width="200" height="80" rx="5" ry="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#7f8c8d">Key Features</text>
+    
+    <circle cx="30" cy="45" r="5" fill="#3498db"/>
+    <text x="45" y="49" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d">DNS & Certificate Transparency</text>
+    
+    <circle cx="30" cy="65" r="5" fill="#3498db"/>
+    <text x="45" y="69" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d">Web, SSL, SSH Service Analysis</text>
+  </g>
+  
+  <!-- Bottom caption -->
+  <text x="480" y="480" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#7f8c8d">Comprehensive reconnaissance from a single domain to detailed vulnerability report</text>
+</svg>

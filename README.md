@@ -140,7 +140,7 @@ optional arguments:
 ## Example Workflow
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Shoscout+Workflow" alt="Shoscout Workflow" width="800"/>
+  <img src="images/shoscout_workflow.svg" alt="Shoscout Workflow" width="800"/>
 </div>
 
 1. Scan a single domain with all features:
@@ -183,7 +183,7 @@ output/
 ```
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Shoscout+Report+Example" alt="Shoscout Report Example" width="800"/>
+  <img src="images/shoscout_report.svg" alt="Shoscout Report Example" width="800"/>
 </div>
 
 ## Dependencies

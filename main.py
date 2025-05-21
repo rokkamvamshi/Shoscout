@@ -102,8 +102,8 @@ def main():
     # Create output directory if it doesn't exist
     os.makedirs(args.output, exist_ok=True)
     
-    # Initialize components
-    results_manager = ResultsManager(args.output, quiet=args.quiet, verbose=args.verbose)
+    # Initialize components - don't pass quiet/verbose params to keep compatibility
+    results_manager = ResultsManager(args.output)
     shodan_client = ShodanClient('config/config.yaml')
     domain_processor = DomainProcessor()
     
@@ -119,14 +119,13 @@ def main():
         logger.error(f"Error processing domains: {e}")
         sys.exit(1)
     
-    # Store domains in results
-    results_manager.set_domains(domains)
-    
     # Run the pipeline
     if not args.skip_subdomain:
         try:
-            enumerator = Enumerator(shodan_client, quiet=args.quiet, verbose=args.verbose)
+            enumerator = Enumerator(shodan_client)
             subdomains, ips = enumerator.enumerate_targets(domains)
+            if not args.quiet:
+                logger.info(f"[+] Found {len(subdomains)} subdomains")
             results_manager.save_subdomains(subdomains)
             results_manager.save_ips(ips)
         except Exception as e:
@@ -136,8 +135,8 @@ def main():
     
     if not args.skip_port_scan:
         try:
-            port_scanner = PortScanner(quiet=args.quiet, verbose=args.verbose)
-            open_ports = port_scanner.scan_targets(results_manager.results.get('ips', {}))
+            port_scanner = PortScanner()
+            open_ports = port_scanner.scan_targets(ips)
             results_manager.save_open_ports(open_ports)
         except Exception as e:
             logger.error(f"Error during port scanning: {e}")
@@ -146,8 +145,8 @@ def main():
     
     if not args.skip_service_check:
         try:
-            service_analyzer = ServiceAnalyzer(quiet=args.quiet, verbose=args.verbose)
-            service_results = service_analyzer.analyze_services(results_manager.results.get('open_ports', {}))
+            service_analyzer = ServiceAnalyzer()
+            service_results = service_analyzer.analyze_services(open_ports)
             results_manager.save_service_results(service_results)
         except Exception as e:
             logger.error(f"Error during service analysis: {e}")
@@ -156,11 +155,8 @@ def main():
     
     if not args.skip_vuln_check:
         try:
-            vuln_checker = VulnerabilityChecker(shodan_client, quiet=args.quiet, verbose=args.verbose)
-            vulnerabilities = vuln_checker.check_vulnerabilities(
-                results_manager.results.get('ips', {}), 
-                results_manager.results.get('open_ports', {})
-            )
+            vuln_checker = VulnerabilityChecker(shodan_client)
+            vulnerabilities = vuln_checker.check_vulnerabilities(ips, open_ports)
             results_manager.save_vulnerabilities(vulnerabilities)
         except Exception as e:
             logger.error(f"Error during vulnerability checking: {e}")

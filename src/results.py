@@ -5,6 +5,7 @@ import json
 import csv
 import datetime
 import time
+import logging
 
 class ResultsManager:
     def __init__(self, output_dir, quiet=False, verbose=False):

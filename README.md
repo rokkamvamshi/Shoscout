@@ -182,10 +182,6 @@ output/
 └── results.json
 ```
 
-<div align="center">
-  <img src="images/shoscout_report.svg" alt="Shoscout Report Example" width="800"/>
-</div>
-
 ## Dependencies
 
 Shoscout relies on the following Python packages:

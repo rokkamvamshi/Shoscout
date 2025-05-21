@@ -29,12 +29,14 @@ class ShodanClient:
         if self.api_key:
             try:
                 self.client = shodan.Shodan(self.api_key)
-                print("[+] Shodan API initialized successfully")
+                # Use logging instead of print
+                import logging
+                logging.info("[+] Shodan API initialized successfully")
             except Exception as e:
-                print(f"[-] Error initializing Shodan client: {e}")
+                logging.error(f"[-] Error initializing Shodan client: {e}")
                 self.client = None
         else:
-            print("[-] No Shodan API key provided. Shodan functionality disabled.")
+            logging.warning("[-] No Shodan API key provided. Shodan functionality disabled.")
     
     def search_domain(self, domain):
         """Search Shodan for information about a domain"""

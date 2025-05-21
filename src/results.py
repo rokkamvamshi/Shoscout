@@ -7,8 +7,10 @@ import datetime
 import time
 
 class ResultsManager:
-    def __init__(self, output_dir):
+    def __init__(self, output_dir, quiet=False, verbose=False):
         self.output_dir = output_dir
+        self.quiet = quiet
+        self.verbose = verbose
         self.results = {
             'scan_info': {
                 'timestamp': int(time.time()),
@@ -24,6 +26,9 @@ class ResultsManager:
         
         # Create output directories
         self._create_output_dirs()
+        
+        # Setup logging
+        self.logger = logging.getLogger(__name__)
     
     def _create_output_dirs(self):
         """Create necessary output directories"""
@@ -34,6 +39,10 @@ class ResultsManager:
         subdirs = ['subdomains', 'ports', 'services', 'vulnerabilities', 'reports']
         for subdir in subdirs:
             os.makedirs(os.path.join(self.output_dir, subdir), exist_ok=True)
+    
+    def set_domains(self, domains):
+        """Store the target domains"""
+        self.results['domains'] = domains
     
     def save_subdomains(self, subdomains):
         """Save discovered subdomains"""

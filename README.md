@@ -55,12 +55,24 @@ Scan multiple domains from a file:
 python main.py -l domains.txt
 ```
 
+Suppress non-error messages (quiet mode):
+
+```
+python main.py -d example.com -q
+```
+
+Enable verbose output for detailed logs:
+
+```
+python main.py -d example.com -v
+```
+
 Full options:
 
 ```
 python main.py -h
 
-usage: main.py [-h] [-d DOMAIN] [-l LIST] [-o OUTPUT] [--skip-subdomain] [--skip-port-scan] [--skip-service-check] [--skip-vuln-check] [-v]
+usage: main.py [-h] [-d DOMAIN] [-l LIST] [-o OUTPUT] [--skip-subdomain] [--skip-port-scan] [--skip-service-check] [--skip-vuln-check] [-v] [-q]
 
 BountyScout - A reconnaissance tool for bug bounty hunters
 
@@ -75,7 +87,8 @@ optional arguments:
   --skip-port-scan      Skip port scanning
   --skip-service-check  Skip service checking
   --skip-vuln-check     Skip vulnerability checking
-  -v, --verbose         Enable verbose output
+  -v, --verbose         Enable verbose output (detailed logs)
+  -q, --quiet           Suppress non-error messages
 ```
 
 ## Example Workflow

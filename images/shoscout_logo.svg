@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shield -->
+  <path d="M400 100 L600 175 L600 350 Q600 450 400 500 Q200 450 200 350 L200 175 Z" fill="#2a3747" stroke="#1c2630" stroke-width="10"/>
+  
+  <!-- Middle shield gradient -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Inner shield -->
+  <path d="M400 130 L560 195 L560 340 Q560 430 400 475 Q240 430 240 340 L240 195 Z" fill="url(#shieldGradient)" stroke="#2980b9" stroke-width="5"/>
+  
+  <!-- Radar sweep animation -->
+  <defs>
+    <clipPath id="radarClip">
+      <path d="M400 130 L560 195 L560 340 Q560 430 400 475 Q240 430 240 340 L240 195 Z"/>
+    </clipPath>
+    <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(52, 152, 219, 0.3)" />
+      <stop offset="100%" style="stop-color:rgba(52, 152, 219, 0)" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Radar circles -->
+  <g clip-path="url(#radarClip)">
+    <circle cx="400" cy="310" r="40" fill="none" stroke="#ecf0f1" stroke-width="2" opacity="0.3"/>
+    <circle cx="400" cy="310" r="80" fill="none" stroke="#ecf0f1" stroke-width="2" opacity="0.25"/>
+    <circle cx="400" cy="310" r="120" fill="none" stroke="#ecf0f1" stroke-width="2" opacity="0.2"/>
+    <circle cx="400" cy="310" r="160" fill="none" stroke="#ecf0f1" stroke-width="2" opacity="0.15"/>
+    
+    <!-- Radar sweep -->
+    <path d="M400 310 L400 150 A160 160 0 0 1 560 310 Z" fill="url(#radarGradient)" opacity="0.5">
+      <animateTransform 
+        attributeName="transform" 
+        attributeType="XML" 
+        type="rotate" 
+        from="0 400 310" 
+        to="360 400 310" 
+        dur="4s" 
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Magnifying glass -->
+  <g transform="translate(370, 280) scale(0.7)">
+    <!-- Handle -->
+    <rect x="70" y="70" width="25" height="120" rx="10" ry="10" fill="#ecf0f1" transform="rotate(45, 70, 70)"/>
+    
+    <!-- Glass circle -->
+    <circle cx="30" cy="30" r="60" fill="none" stroke="#ecf0f1" stroke-width="12"/>
+    
+    <!-- Glimmer -->
+    <path d="M10 20 Q20 5 35 15" stroke="#ffffff" stroke-width="4" fill="none"/>
+  </g>
+  
+  <!-- Nodes and connections -->
+  <g opacity="0.8">
+    <circle cx="300" cy="240" r="8" fill="#e74c3c"/>
+    <circle cx="480" cy="220" r="8" fill="#e74c3c"/>
+    <circle cx="340" cy="380" r="8" fill="#e74c3c"/>
+    <circle cx="460" cy="350" r="8" fill="#e74c3c"/>
+    <circle cx="400" cy="300" r="8" fill="#f1c40f"/>
+    
+    <line x1="300" y1="240" x2="400" y2="300" stroke="#ecf0f1" stroke-width="2" opacity="0.6"/>
+    <line x1="480" y1="220" x2="400" y2="300" stroke="#ecf0f1" stroke-width="2" opacity="0.6"/>
+    <line x1="340" y1="380" x2="400" y2="300" stroke="#ecf0f1" stroke-width="2" opacity="0.6"/>
+    <line x1="460" y1="350" x2="400" y2="300" stroke="#ecf0f1" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Text for the logo -->
+  <text x="400" y="550" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#ecf0f1">SHOSCOUT</text>
+  <text x="400" y="585" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="20" text-anchor="middle" fill="#7f8c8d">Reconnaissance Tool</text>
+</svg>
